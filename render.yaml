@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: justbuyit-backend
+    runtime: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: backend
+    plan: free
+    region: oregon
+    healthCheckPath: /api/products/categories
+    envVars:
+      - key: PORT
+        value: 10000

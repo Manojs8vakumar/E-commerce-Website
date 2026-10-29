@@ -73,3 +73,24 @@ A modern, responsive, and full-stack e-commerce web application engineered with 
 - **Dedicated Grocery Hub**: Amul Milk, Alphonso Mangoes, Maggi 4-Pack, Lay's Party Pack, Chilled Coca-Cola Zero, Fortune Sunflower Oil, Cadbury Dairy Milk Silk.
 - **In-Card Stepper (`+ ADD / [-] 1 [+]`)**: Add express groceries with instant quantity stepper without page refreshes.
 - **Live 10-Min GPS Tracker Simulation**: Interactive stopwatch countdown, dark store picker status, electric bike GPS path, and doorstep delivery PIN.
+
+---
+
+## 🚀 Cloud Deployment (Vercel & Render)
+
+### 1. Deploy Frontend to Vercel
+1. Go to [Vercel Dashboard](https://vercel.com/new).
+2. Import `Manojs8vakumar/E-commerce-Website`.
+3. Set **Root Directory** to `frontend` (or leave root since `vercel.json` is configured).
+4. In **Environment Variables**, add:
+   - `VITE_API_URL` = `https://<your-render-backend-name>.onrender.com/api` (or leave empty to test locally)
+5. Click **Deploy**.
+
+### 2. Deploy Backend to Render
+1. Go to [Render Dashboard](https://dashboard.render.com).
+2. Click **New +** -> **Web Service**.
+3. Connect your GitHub repository `Manojs8vakumar/E-commerce-Website`.
+4. Choose **Docker** environment (it automatically detects `backend/Dockerfile` and `render.yaml`).
+   - *Alternative (Native Java)*: Root Directory: `backend`, Build: `./mvnw clean package -DskipTests`, Start: `java -Dserver.port=$PORT -jar target/backend-0.0.1-SNAPSHOT.jar`.
+5. Set Plan to **Free**.
+6. Click **Create Web Service**. Your Spring Boot API will be live at `https://<service-name>.onrender.com/api`.

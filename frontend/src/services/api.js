@@ -1,5 +1,5 @@
-// API client to interact with Spring Boot Backend on port 8082
-const BASE_URL = 'http://localhost:8082/api';
+// API client to interact with Spring Boot Backend (Render in production, port 8082 in local dev)
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8082/api';
 
 export const fetchProducts = async (params = {}) => {
   try {
