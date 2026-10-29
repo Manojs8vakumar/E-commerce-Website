@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --jbi-blue: #2874f0;
+    --jbi-dark-blue: #172337;
+    --jbi-yellow: #ffe500;
+    --jbi-orange: #fb641b;
+    --jbi-green: #388e3c;
+    --jbi-bg: #f1f3f6;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f1f3f6;
+    color: #212121;
+    overflow-x: hidden;
+  }
+}
+
+/* JBI Assured Badge */
+.f-assured-badge,
+.jbi-assured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: linear-gradient(135deg, #2874f0 0%, #1e5bc6 100%);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  font-style: italic;
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+
+.f-assured-badge .f-check,
+.jbi-assured-badge .f-check {
+  color: #ffe500;
+  font-style: normal;
+}
+
+/* Green Rating Badge */
+.jbi-rating-badge,
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background-color: #388e3c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Custom 3D Card Perspective */
+.card-3d-wrapper {
+  perspective: 1200px;
+}
+
+.card-3d {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.15);
+}
+
+/* Clean Panel */
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f3f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c2c2c2;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2874f0;
+}
