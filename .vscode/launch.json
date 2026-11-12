@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "☕ Debug Spring Boot (Backend)",
+      "request": "launch",
+      "mainClass": "com.justbuyit.JustbuyitApplication",
+      "projectName": "backend",
+      "cwd": "${workspaceFolder}/backend",
+      "env": {
+        "PORT": "8082"
+      }
+    },
+    {
+      "type": "chrome",
+      "name": "🌐 Launch Frontend in Chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend"
+    },
+    {
+      "type": "msedge",
+      "name": "🌐 Launch Frontend in Edge",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "🚀 Full Stack: Spring Boot + Chrome",
+      "configurations": [
+        "☕ Debug Spring Boot (Backend)",
+        "🌐 Launch Frontend in Chrome"
+      ]
+    }
+  ]
+}

@@ -4,6 +4,29 @@ A modern, responsive, and full-stack e-commerce web application engineered with 
 
 ---
 
+## ⚡ Quick Start in VS Code (Run Locally)
+
+> Full step-by-step instructions available in [RUN_IN_VSCODE.md](file:///d:/pr3/RUN_IN_VSCODE.md).
+
+### Method 1: 1-Click Launch (Windows)
+Double-click **`run.bat`** in the project root, or in the VS Code terminal run:
+```powershell
+.\run.bat
+```
+Both backend (`:8082`) and frontend (`:5173`) will launch in their own windows, and the browser will open automatically at **http://localhost:5173**!
+
+### Method 2: VS Code Build Task
+Press **`Ctrl + Shift + B`** in VS Code and select:
+```
+🚀 Run Full-Stack (Backend + Frontend)
+```
+
+### Method 3: Separate Terminals
+- **Backend:** `cd backend && .\mvnw.cmd spring-boot:run`
+- **Frontend:** `cd frontend && npm.cmd run dev`
+
+---
+
 ## 🌟 Key Architectural Highlights & Platform Features
 
 | Feature Pillar | Implementation Details in "Just Buy It" |

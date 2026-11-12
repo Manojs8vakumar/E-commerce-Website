@@ -1,0 +1,106 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🚀 Run Full-Stack (Backend + Frontend)",
+      "dependsOn": [
+        "Start Backend (Port 8082)",
+        "Start Frontend (Port 5173)"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Start Backend (Port 8082)",
+      "type": "shell",
+      "command": "cmd.exe /c mvnw.cmd spring-boot:run -DskipTests",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Building justbuyit",
+          "endsPattern": "Started JustbuyitApplication"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "servers",
+        "clear": true
+      }
+    },
+    {
+      "label": "Start Frontend (Port 5173)",
+      "type": "shell",
+      "command": "cmd.exe /c npm.cmd run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE",
+          "endsPattern": "Local:   http://localhost:5173"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "servers",
+        "clear": true
+      }
+    },
+    {
+      "label": "Install Frontend Dependencies",
+      "type": "shell",
+      "command": "cmd.exe /c npm.cmd install",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Backend (JAR)",
+      "type": "shell",
+      "command": "cmd.exe /c mvnw.cmd clean package -DskipTests",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Frontend (Production)",
+      "type": "shell",
+      "command": "cmd.exe /c npm.cmd run build",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Stop All Servers (Free Ports 8082 & 5173)",
+      "type": "shell",
+      "command": "cmd.exe /c ..\\stop-all.bat",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

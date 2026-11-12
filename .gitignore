@@ -17,7 +17,11 @@ yarn-error.log*
 
 # IDE & OS
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 *.iml
 *.ipr
 *.iws
